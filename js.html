@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Character Counter</title>
+     <style>
+        .form{
+           background-color:lightpink ;
+           max-width: 50%;
+           box-sizing: border-box;
+           box-shadow: 4px 5px 4px 5px lightblue;
+           margin-left: 150px;
+        }
+        .sec{
+           text-align: center;
+        }
+        .clac{
+            font-family: cursive; 
+
+        }
+        .clac textarea{
+            font-size: 15px;
+            padding: 10px;
+        }
+        .tot{
+            color: lightblue;
+            margin-left: -150px;
+        }
+        .reman{
+            color: lightblue;
+            margin-left: 190px;
+            margin-top: -40px;
+        }
+    </style> 
+</head>
+<body>
+    <form class="form">
+        <section class="sec">
+                 <div class="clac">
+                          <h1>Real-time Character Counter</h1>
+                          <textarea name="box" id="man" placeholder="Please write your text here....." maxlength="50"></textarea>
+                 </div>
+                 <div class="tot">
+                          <h3>Total Characters:<span id="totalChras">30</span></Characters:span></Characters:span></h3>
+                 </div>
+                 <div class="reman">
+                          <h3>Remaining:<span id="remainingChras">20</span></h3>
+                 </div>
+        </section>
+    </form>
+    <script>
+        const textarea= document.getElementById("man");
+        const totalchras = document.getElementById("totalChras");
+        const  remans = document.getElementById("remainingChras");
+       
+        textarea.addEventListener("input",()=>{
+            updateCounter()
+        });
+
+        function updateCounter(){
+            totalchras.innerText= textarea.value.length;
+           remans.innerText=textarea.getAttribute("maxlength")-textarea.value.length;
+        }
+
+        
+
+
+
+    </script>
+</body>
+</html>
